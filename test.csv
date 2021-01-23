@@ -1,5 +1,5 @@
-Name,Roll,Course
-Ram,23,BIT
-Shyam,34,BBA
-Hari,22,BSC
-Chandra,42,BSCCS
+Name,Roll,Course,Price
+Ram,23,BIT,100
+Shyam,34,BBA,200
+Hari,22,BSC,300
+Chandra,42,BSCCS,100
