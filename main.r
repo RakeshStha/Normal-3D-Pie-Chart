@@ -54,11 +54,7 @@ legend("topright",c(file$Name), cex= 0.6, fill = rainbow(length(file$Roll)))
 pie3D(file$Roll,labels = percent, explode = 0.1, main="Citys pie chart",col= rainbow(length(file$Roll)))
 legend("topright",c(file$Name), cex= 0.6, fill = rainbow(length(file$Roll)))
 
-
-
-
-
-
+ 
 
 
 
@@ -102,6 +98,75 @@ pie(data, labels=row.names(data))
 #Plotting piechart with using GGPlot tools
 # library used: ggplot2, reshape2,dplyr
 
+
+#For Graph part
+
+
+#creating data 
+H <- c(3,23,12,3,13)
+
+#Allocating name
+png(file = "barchart.png")
+
+# plotting graph
+
+barplot(H)
+
+#save the file
+dev.off()
+
+
+
+#Monthly revenue barchart
+
+Salary <- c (1000,2000,3000,4000,5000)
+Month <- c ("Jan", "Feb","Mar","Apr","May")
+
+#name of barchare .png
+png(file = "barchart-monthly-revenue.png")
+
+#plotting the graph
+barplot (Salary, names.arg= Month, xlab="Month", ylab="Revenue", col="green", main= "monthly Revenue chart", border="red")
+
+#save file 
+dev.off()
+
+
+# creating matrix values
+#vector creation
+colors <- c("green", "red", "orange","brown")
+months <- c("Jan","Feb","Mar","Apr","May")
+regions <- c("East","West","North","South")
+
+#creating matrix values
+Values <- matrix (c(2,4,5,6,12,1,23,2,3,14,5,6,7,8,10), nrow = 3, ncol =5, byrow=TRUE)
+
+#giving chart names
+png(file="barchart_matrix.png")
+
+#creating bar chart
+barplot(Values, main="Total revenue", names.arg = months, xlab="Month", ylab="Revenue", col= colors)
+
+# Adding the legend to the chart
+legend("topleft", regions, cex = 1.3, fill= colors)
+
+#file save
+dev.off()
+
+
+#Boxplots for mileage and cylinder data
+input < mtcars[,c('mpg','cyl')]
+print(head(input))
+
+# Give the chart file a name.
+png(file = "boxplot.png")
+
+# Plot the chart.
+boxplot(mpg ~ cyl, data = mtcars, xlab = "Number of Cylinders",
+        ylab = "Miles Per Gallon", main = "Mileage Data")
+
+# Save the file.
+dev.off()
 
 
 
